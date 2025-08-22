@@ -1,6 +1,10 @@
 import { config } from '@fisch0920/config/eslint'
 
 export default [
+  {
+    ignores: ['.next/**', 'next-env.d.ts']
+  },
+
   ...config,
   {
     files: ['**/*.ts', '**/*.tsx'],

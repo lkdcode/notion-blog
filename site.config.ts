@@ -64,6 +64,6 @@ export default siteConfig({
     {
       title: 'DevOps',
       pageId: '253a12d08f8e802694cdc8a17d559a62'
-    },
+    }
   ]
 })

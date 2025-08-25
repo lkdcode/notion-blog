@@ -26,7 +26,9 @@
 }
 
 .notion-text {
-  padding: 0.5em 2px;
+  /* padding: 0.5em 2px; */
+  padding: 0;
+  margin: 0;
 }
 
 .notion-asset-caption {
@@ -208,6 +210,13 @@
   .notion-page-cover-wrapper img {
     border-radius: 0;
   }
+}
+.notion-block-259a12d08f8e807cb1c9cdd0d8d92322,
+.notion-block-259a12d08f8e80059855fd2e94d4aa15,
+.notion-block-25aa12d08f8e803da11dc7c928753191,
+.notion-block-25aa12d08f8e80d0966cf6a7cee2bf21 {
+  justify-content: center;
+  padding: 2em;
 }
 
 .notion-block-ab9a258d6cf444f3bb40dc2600feae91 .notion-page-link {

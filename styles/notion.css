@@ -211,7 +211,13 @@
     border-radius: 0;
   }
 }
-.notion-block-259a12d08f8e807cb1c9cdd0d8d92322 .notion-page-link{
+
+.notion-row notion-block-25aa12d08f8e804d8f08d70fbcac8320 {
+  justify-content: center;
+  padding: 2em;
+}
+
+/* .notion-block-259a12d08f8e807cb1c9cdd0d8d92322 .notion-page-link{
   justify-content: center;
   padding: 2em;
 }
@@ -234,7 +240,7 @@
 .notion-block-ab9a258d6cf444f3bb40dc2600feae91 .notion-page-link {
   justify-content: center;
   padding: 2em;
-}
+} */
 
 .notion-code {
   background: rgba(249, 250, 251, 1);

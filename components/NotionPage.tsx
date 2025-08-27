@@ -100,7 +100,13 @@ const Code = dynamic(() =>
       // @ts-expect-error Ignore prisma types
       import('prismjs/components/prism-wasm.js'),
       // @ts-expect-error Ignore prisma types
-      import('prismjs/components/prism-yaml.js')
+      import('prismjs/components/prism-yaml.js'),
+      // @ts-expect-error Ignore prisma types
+      import('prismjs/components/prism-groovy.js'),
+      // @ts-expect-error Ignore prisma types
+      import('prismjs/components/prism-kotlin.js'),
+      // @ts-expect-error Ignore prisma types
+      import('prismjs/components/prism-gradle.js')
     ])
     return m.Code
   })

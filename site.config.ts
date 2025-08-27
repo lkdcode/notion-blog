@@ -55,15 +55,15 @@ export default siteConfig({
   navigationLinks: [
     {
       title: 'Core',
-      pageId: '253a12d08f8e802694cdc8a17d559a62'
+      pageId: '259a12d08f8e807cb1c9cdd0d8d92322'
     },
     {
       title: 'DB',
-      pageId: '253a12d08f8e802694cdc8a17d559a62'
+      pageId: '259a12d08f8e80059855fd2e94d4aa15'
     },
     {
       title: 'DevOps',
-      pageId: '253a12d08f8e802694cdc8a17d559a62'
+      pageId: '25aa12d08f8e803da11dc7c928753191'
     }
   ]
 })

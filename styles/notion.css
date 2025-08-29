@@ -212,27 +212,13 @@
   }
 }
 
-.notion-block-259a12d08f8e807cb1c9cdd0d8d92322.notion-page-link{
-  justify-content: center;
-  padding: 2em;
-}
+.notion-block-259a12d08f8e807cb1c9cdd0d8d92322.notion-page-link, /* Core */
+.notion-block-259a12d08f8e80059855fd2e94d4aa15.notion-page-link, /* Data base*/
+.notion-block-25aa12d08f8e803da11dc7c928753191.notion-page-link, /* DevOps */
 
-.notion-block-259a12d08f8e80059855fd2e94d4aa15.notion-page-link{
-  justify-content: center;
-  padding: 2em;
-}
-
-.notion-block-25aa12d08f8e803da11dc7c928753191.notion-page-link{
-  justify-content: center;
-  padding: 2em;
-}
-
-.notion-block-25aa12d08f8e80d0966cf6a7cee2bf21.notion-page-link {
-  justify-content: center;
-  padding: 2em;
-}
-
-.notion-block-ab9a258d6cf444f3bb40dc2600feae91.notion-page-link {
+.notion-block-25aa12d08f8e80d0966cf6a7cee2bf21.notion-page-link, /* Algorithm */
+.notion-block-25ea12d08f8e8003910ce688af2dbf8c.notion-page-link, /* Book */
+.notion-block-25ea12d08f8e80fca9a8f61c31395447.notion-page-link /* ETC */ {
   justify-content: center;
   padding: 2em;
 }
@@ -434,10 +420,13 @@
   text-align: center;
 }
 
-.notion-page-link.notion-block-25aa12d08f8e80d0966cf6a7cee2bf21:hover,
-.notion-page-link.notion-block-259a12d08f8e807cb1c9cdd0d8d92322:hover,
-.notion-page-link.notion-block-259a12d08f8e80059855fd2e94d4aa15:hover,
-.notion-page-link.notion-block-25aa12d08f8e803da11dc7c928753191:hover {
+.notion-block-259a12d08f8e807cb1c9cdd0d8d92322.notion-page-link:hover, /* Core */
+.notion-block-259a12d08f8e80059855fd2e94d4aa15.notion-page-link:hover, /* Data base*/
+.notion-block-25aa12d08f8e803da11dc7c928753191.notion-page-link:hover, /* DevOps */
+
+.notion-block-25aa12d08f8e80d0966cf6a7cee2bf21.notion-page-link:hover, /* Algorithm */
+.notion-block-25ea12d08f8e8003910ce688af2dbf8c.notion-page-link:hover, /* Book */
+.notion-block-25ea12d08f8e80fca9a8f61c31395447.notion-page-link:hover /* ETC */ {
   border-bottom-color: transparent;
 
   background-image: linear-gradient(90.68deg, #b439df 0.26%, #e5337e 102.37%);

@@ -441,5 +441,10 @@
 @media (max-width: 786px) {
   .notion-collection.notion-block-25ea12d08f8e80c0b107e654b0aed834 {
     align-self: auto;
+    max-width: 100%;
+  }
+
+  .notion-page-icon-inline {
+    min-width: 22px;
   }
 }

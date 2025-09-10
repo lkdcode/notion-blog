@@ -474,3 +474,7 @@
   transition-property: background-position, background-size;
   transition-duration: 300ms;
 }
+
+.notion-page-icon {
+  border-radius: 50%;
+}

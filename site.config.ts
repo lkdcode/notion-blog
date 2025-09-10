@@ -10,7 +10,7 @@ export default siteConfig({
 
   // basic site info (required)
   name: 'lkdcode.blog',
-  domain: 'lkdcode.dev',
+  domain: 'https://www.lkdcode.dev',
   author: 'lkdcode',
 
   // open graph metadata (optional)
@@ -28,7 +28,7 @@ export default siteConfig({
   // page-specific values will override these site-wide defaults
   // defaultPageIcon: '/lkdcode-dark.gif',
   defaultPageIcon: 'https://www.lkdcode.dev/lkdcode.jpg',
-  defaultPageCover: '/page_cover.png',
+  defaultPageCover: 'https://www.lkdcode.dev/page_cover.png',
   defaultPageCoverPosition: 0.5,
 
   // whether or not to enable support for LQIP preview images (optional)

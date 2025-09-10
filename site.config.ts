@@ -26,7 +26,8 @@ export default siteConfig({
 
   // default notion icon and cover images for site-wide consistency (optional)
   // page-specific values will override these site-wide defaults
-  defaultPageIcon: null,
+  // defaultPageIcon: '/lkdcode-dark.gif',
+  defaultPageIcon: 'https://www.lkdcode.dev/lkdcode.jpg',
   defaultPageCover: '/page_cover.png',
   defaultPageCoverPosition: 0.5,
 

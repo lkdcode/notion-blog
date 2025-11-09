@@ -52,6 +52,30 @@
   padding: 8px;
 
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footerLink {
+  width: 100%;
+  max-width: 1100px;
+  margin: auto auto 0;
+  padding: 8px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footerComment {
+  width: 100%;
+  max-width: 1100px;
+  margin: auto auto 0;
+  padding: 8px;
+
+  display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;

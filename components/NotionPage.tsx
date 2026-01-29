@@ -112,15 +112,13 @@ const Code = dynamic(() =>
   })
 )
 
-// SSR 활성화: 서버에서 갤러리가 렌더링되어 HTML에 포함됨
-// 이렇게 하면 304 캐시 응답에서도 갤러리가 바로 보임
 const Collection = dynamic(
   () =>
     import('react-notion-x/build/third-party/collection').then(
       (m) => m.Collection
     ),
   {
-    ssr: true
+    ssr: false
   }
 )
 const Equation = dynamic(() =>

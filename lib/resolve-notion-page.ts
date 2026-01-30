@@ -16,17 +16,13 @@ export async function resolveNotionPage(
   let recordMap: ExtendedRecordMap
 
   if (rawPageId && rawPageId !== 'index') {
-    pageId = parsePageId(rawPageId)!
+    // 먼저 pageUrlOverrides/pageUrlAdditions 확인 (삭제된 페이지 리디렉트)
+    const override = pageUrlOverrides[rawPageId] || pageUrlAdditions[rawPageId]
 
-    if (!pageId) {
-      // check if the site configuration provides an override or a fallback for
-      // the page's URI
-      const override =
-        pageUrlOverrides[rawPageId] || pageUrlAdditions[rawPageId]
-
-      if (override) {
-        pageId = parsePageId(override)!
-      }
+    if (override) {
+      pageId = parsePageId(override)!
+    } else {
+      pageId = parsePageId(rawPageId)!
     }
 
     const useUriToPageIdCache = true

@@ -6,7 +6,7 @@ export default siteConfig({
 
   // if you want to restrict pages to a single notion workspace (optional)
   // (this should be a Notion ID; see the docs for how to extract this)
-  rootNotionSpaceId: null,
+  rootNotionSpaceId: 'b50424d1-38bd-4df2-9f68-8594894dde00',
 
   // basic site info (required)
   name: 'lkdcode.blog',

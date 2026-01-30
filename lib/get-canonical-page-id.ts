@@ -1,5 +1,5 @@
 import { type ExtendedRecordMap } from 'notion-types'
-import { getBlockTitle, parsePageId, uuidToId } from 'notion-utils'
+import { getBlockTitle, parsePageId } from 'notion-utils'
 
 import { inversePageUrlOverrides } from './config'
 
@@ -8,13 +8,13 @@ import { inversePageUrlOverrides } from './config'
  */
 function normalizeTitle(title: string | null): string {
   return (title || '')
-    .replace(/\s+/g, '-')
-    .replace(
+    .replaceAll(/\s+/g, '-')
+    .replaceAll(
       /[^a-zA-Z0-9\u3000-\u303F\u3041-\u3096\u30A1-\u30FC\u4E00-\u9FFF\uAC00-\uD7AF-]/g,
       ''
     )
-    .replace(/--+/g, '-')
-    .replace(/^-|-$/g, '')
+    .replaceAll(/--+/g, '-')
+    .replaceAll(/^-|-$/g, '')
     .trim()
     .toLowerCase()
 }

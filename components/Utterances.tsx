@@ -18,7 +18,7 @@ export default function Utterances({
   const ref = useRef<HTMLDivElement>(null)
   const isLoadedRef = useRef(false)
 
-  // 최초 마운트 시 스크립트 로드
+  // 최초 마운트 시 스크립트 로드 (theme 변경은 postMessage로 처리하므로 의존성에서 제외)
   useEffect(() => {
     if (!ref.current || isLoadedRef.current) return
 
@@ -32,6 +32,7 @@ export default function Utterances({
     s.setAttribute('crossorigin', 'anonymous')
     ref.current.append(s)
     isLoadedRef.current = true
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [repo, issueTerm, label])
 
   // 테마 변경 시 postMessage로 iframe에 전달

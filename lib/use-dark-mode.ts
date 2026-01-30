@@ -1,6 +1,5 @@
-import { useEffect, useState } from 'react'
-
 import useDarkModeImpl from '@fisch0920/use-dark-mode'
+import { useEffect, useState } from 'react'
 
 export function useDarkMode() {
   const [hasMounted, setHasMounted] = useState(false)

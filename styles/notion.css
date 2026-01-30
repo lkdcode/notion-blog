@@ -517,3 +517,28 @@ _:future,
 .notion-page-icon {
   border-radius: 50%;
 }
+
+/* 모바일에서도 컬럼 레이아웃 유지 (3열 → 3열) */
+.notion-row {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  gap: 8px;
+}
+
+.notion-column {
+  flex: 1 1 0 !important;
+  min-width: 0 !important;
+}
+
+/* 모바일에서 컬럼 내 텍스트 크기 조정 */
+@media (max-width: 480px) {
+  .notion-column {
+    padding: 0 4px;
+  }
+
+  .notion-column .notion-page-link {
+    font-size: 14px;
+    padding: 8px;
+  }
+}

@@ -52,6 +52,21 @@ export default siteConfig({
   // }
   pageUrlOverrides: null,
 
+  // 삭제/변경된 페이지 URL 리디렉트
+  pageUrlAdditions: {
+    '/2a5a12d08f8e805a9f04d2112f476379': '2f7a12d08f8e81f6913dcce8e37567b3',
+    '/267a12d08f8e80d08a74cacb4c314070': '2f8a12d08f8e81cdbb00c0730dc50340',
+    '/25ba12d08f8e806d8d6bf797ca557bbd': '2f8a12d08f8e81a783ebd43c583f325f',
+    '/26ca12d08f8e80b6bd5df31f91d29dee': '2f8a12d08f8e81a39bf9eb911c7704f7',
+    '/26da12d08f8e8091aa51e8cd858fce03': '2f8a12d08f8e8129b30ce718224262e0',
+    '/25ba12d08f8e801ab637e89a0c0eb5c3': '2f8a12d08f8e811abf9ad5b5a2fd644a',
+    '/267a12d08f8e808ab92ede5defc6defb': '2f8a12d08f8e819db1d6e806835264e7',
+    '/25ba12d08f8e80609070fa24d84d5c97': '2f8a12d08f8e81529dabc12642e86faa',
+    '/25ba12d08f8e80fda552dccb25a49809': '2f8a12d08f8e8102a1f0fa26e9dbee0d',
+    '/25ba12d08f8e80d6ab20e4addd70005d': '2f8a12d08f8e81e6a470d00abb87545c',
+    '/267a12d08f8e803ba247e7e053ca331e': '2f8a12d08f8e8115830df754bedcaa74'
+  },
+
   // whether to use the default notion navigation style or a custom one with links to
   // important pages. To use `navigationLinks`, set `navigationStyle` to `custom`.
   // navigationStyle: 'default'

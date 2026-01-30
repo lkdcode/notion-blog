@@ -5,6 +5,7 @@ import cs from 'classnames'
 import * as React from 'react'
 import { Breadcrumbs, Header, Search, useNotionContext } from 'react-notion-x'
 
+import * as config from '@/lib/config'
 import { isSearchEnabled, navigationLinks, navigationStyle } from '@/lib/config'
 import { useDarkMode } from '@/lib/use-dark-mode'
 
@@ -37,7 +38,15 @@ export function NotionPageHeader({
   return (
     <header className='notion-header'>
       <div className='notion-nav-header'>
-        <Breadcrumbs block={block} rootOnly={true} />
+        {/* 홈 버튼 - 항상 표시 */}
+        <div className='breadcrumbs'>
+          <components.PageLink
+            href={mapPageUrl(config.rootNotionPageId)}
+            className={cs(styles.navLink, 'breadcrumb', 'button')}
+          >
+            {config.name}
+          </components.PageLink>
+        </div>
 
         <div className='notion-nav-header-rhs breadcrumbs'>
           {navigationLinks

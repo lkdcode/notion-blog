@@ -18,8 +18,7 @@ import Utterances from './Utterances'
 // TODO: merge the data and icons from PageSocial with the social links in Footer
 
 export function FooterImpl() {
-  const [hasMounted, setHasMounted] = React.useState(false)
-  const { isDarkMode, toggleDarkMode } = useDarkMode()
+  const { hasMounted, isDarkMode, toggleDarkMode } = useDarkMode()
   const currentYear = new Date().getFullYear()
 
   const onToggleDarkMode = React.useCallback(
@@ -30,20 +29,18 @@ export function FooterImpl() {
     [toggleDarkMode]
   )
 
-  React.useEffect(() => {
-    setHasMounted(true)
-  }, [])
-
   return (
     <footer className={styles.footer}>
       <div className={styles.footerLink}>
-        <Utterances
-          className={styles.footerComment}
-          repo='lkdcode/notion-blog'
-          issueTerm='pathname'
-          label='💬Comment'
-          theme={isDarkMode ? 'github-dark' : 'github-light'}
-        />
+        {hasMounted && (
+          <Utterances
+            className={styles.footerComment}
+            repo='lkdcode/notion-blog'
+            issueTerm='pathname'
+            label='💬Comment'
+            theme={isDarkMode ? 'github-dark' : 'github-light'}
+          />
+        )}
       </div>
       <div className={styles.footerLink}>
         <div className={styles.copyright}>

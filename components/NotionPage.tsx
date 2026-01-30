@@ -6,7 +6,6 @@ import { useRouter } from 'next/router'
 import { type PageBlock } from 'notion-types'
 import { formatDate, getBlockTitle, getPageProperty } from 'notion-utils'
 import * as React from 'react'
-import BodyClassName from 'react-body-classname'
 import {
   type NotionComponents,
   NotionRenderer,
@@ -133,7 +132,13 @@ const Pdf = dynamic(
 const Modal = dynamic(
   () =>
     import('react-notion-x/build/third-party/modal').then((m) => {
-      m.Modal.setAppElement('.notion-viewport')
+      // setAppElement는 DOM이 준비된 후 호출되어야 함
+      if (typeof window !== 'undefined') {
+        const viewport = document.querySelector('.notion-viewport')
+        if (viewport) {
+          m.Modal.setAppElement('.notion-viewport')
+        }
+      }
       return m.Modal
     }),
   {
@@ -225,6 +230,16 @@ export function NotionPage({
 
   const { isDarkMode } = useDarkMode()
 
+  // body 클래스 관리 (react-body-classname 대신 직접 처리)
+  React.useEffect(() => {
+    document.body.classList.toggle('dark-mode', isDarkMode)
+    document.body.classList.toggle('notion-lite', isLiteMode)
+
+    return () => {
+      document.body.classList.remove('dark-mode', 'notion-lite')
+    }
+  }, [isDarkMode, isLiteMode])
+
   const siteMapPageUrl = React.useMemo(() => {
     const params: any = {}
     if (lite) params.lite = lite
@@ -309,9 +324,6 @@ export function NotionPage({
         url={canonicalPageUrl}
         isBlogPost={isBlogPost}
       />
-
-      {isLiteMode && <BodyClassName className='notion-lite' />}
-      {isDarkMode && <BodyClassName className='dark-mode' />}
 
       <NotionRenderer
         bodyClassName={cs(

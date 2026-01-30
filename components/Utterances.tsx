@@ -16,11 +16,11 @@ export default function Utterances({
   theme
 }: Props) {
   const ref = useRef<HTMLDivElement>(null)
+  const isLoadedRef = useRef(false)
 
+  // 최초 마운트 시 스크립트 로드
   useEffect(() => {
-    if (!ref.current) return
-    // 테마 전환 시 중복 삽입 방지
-    ref.current.innerHTML = ''
+    if (!ref.current || isLoadedRef.current) return
 
     const s = document.createElement('script')
     s.src = 'https://utteranc.es/client.js'
@@ -31,7 +31,21 @@ export default function Utterances({
     s.setAttribute('theme', theme)
     s.setAttribute('crossorigin', 'anonymous')
     ref.current.append(s)
-  }, [repo, issueTerm, label, theme])
+    isLoadedRef.current = true
+  }, [repo, issueTerm, label])
+
+  // 테마 변경 시 postMessage로 iframe에 전달
+  useEffect(() => {
+    const iframe = document.querySelector<HTMLIFrameElement>(
+      'iframe.utterances-frame'
+    )
+    if (iframe?.contentWindow) {
+      iframe.contentWindow.postMessage(
+        { type: 'set-theme', theme },
+        'https://utteranc.es'
+      )
+    }
+  }, [theme])
 
   return <section id='comments' className={className} ref={ref} />
 }

@@ -39,6 +39,9 @@ export default siteConfig({
   // environment variables. see the readme for more info
   isRedisEnabled: true,
 
+  // 항상 URL에 Notion page ID를 포함 (페이지 이동에 필요)
+  includeNotionIdInUrls: true,
+
   // map of notion page IDs to URL paths (optional)
   // any pages defined here will override their default URL paths
   // example:

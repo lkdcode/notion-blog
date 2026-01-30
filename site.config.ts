@@ -64,25 +64,29 @@ export default siteConfig({
     '/26da12d08f8e8091aa51e8cd858fce03': '2f8a12d08f8e8129b30ce718224262e0', // gRPC
     '/25ba12d08f8e801ab637e89a0c0eb5c3': '2f8a12d08f8e811abf9ad5b5a2fd644a', // 캐시전략
     '/267a12d08f8e808ab92ede5defc6defb': '2f8a12d08f8e819db1d6e806835264e7', // 경로변수 암호화
-    '/25ba12d08f8e80609070fa24d84d5c97': '2f8a12d08f8e817094b8d71f1ff78323' // SCG
+    '/25ba12d08f8e80609070fa24d84d5c97': '2f8a12d08f8e817094b8d71f1ff78323', // SCG
+    '/25ba12d08f8e80fda552dccb25a49809': '2f8a12d08f8e8102a1f0fa26e9dbee0d', // TestContainer
+    '/25ba12d08f8e80d6ab20e4addd70005d': '2f8a12d08f8e81e6a470d00abb87545c', // FixtureMonkey
+    '/25ea12d08f8e80749860cd8850390251': '25ea12d08f8e80749860cd8850390251', // 함께자라기
+    '/267a12d08f8e803ba247e7e053ca331e': '2f8a12d08f8e8115830df754bedcaa74' // 테스트 좋은 글
   },
 
   // whether to use the default notion navigation style or a custom one with links to
   // important pages. To use `navigationLinks`, set `navigationStyle` to `custom`.
   // navigationStyle: 'default'
-  navigationStyle: 'custom',
-  navigationLinks: [
-    {
-      title: 'Core',
-      pageId: '259a12d08f8e807cb1c9cdd0d8d92322'
-    },
-    {
-      title: 'DB',
-      pageId: '259a12d08f8e80059855fd2e94d4aa15'
-    },
-    {
-      title: 'DevOps',
-      pageId: '25aa12d08f8e803da11dc7c928753191'
-    }
-  ]
+  navigationStyle: 'custom'
+  //   navigationLinks: [
+  //     {
+  //       title: 'Core',
+  //       pageId: '259a12d08f8e807cb1c9cdd0d8d92322'
+  //     },
+  //     {
+  //       title: 'DB',
+  //       pageId: '259a12d08f8e80059855fd2e94d4aa15'
+  //     },
+  //     {
+  //       title: 'DevOps',
+  //       pageId: '25aa12d08f8e803da11dc7c928753191'
+  //     }
+  //   ]
 })

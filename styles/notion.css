@@ -554,3 +554,9 @@ _:future,
 [class*="preview"] img[src*="favicon"] {
   display: none !important;
 }
+
+/* 멘션 프리뷰 박스 높이를 콘텐츠에 맞게 조절 */
+.notion-link-mention-card {
+  height: auto !important;
+  min-height: unset !important;
+}

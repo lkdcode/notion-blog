@@ -54,17 +54,17 @@ export default siteConfig({
 
   // 삭제/변경된 페이지 URL 리디렉트
   pageUrlAdditions: {
-    '/2a5a12d08f8e805a9f04d2112f476379': '2f7a12d08f8e81f6913dcce8e37567b3',
-    '/267a12d08f8e80d08a74cacb4c314070': '2f8a12d08f8e81cdbb00c0730dc50340',
-    '/25ba12d08f8e806d8d6bf797ca557bbd': '2f8a12d08f8e81a783ebd43c583f325f',
-    '/26ca12d08f8e80b6bd5df31f91d29dee': '2f8a12d08f8e81a39bf9eb911c7704f7',
-    '/26da12d08f8e8091aa51e8cd858fce03': '2f8a12d08f8e8129b30ce718224262e0',
-    '/25ba12d08f8e801ab637e89a0c0eb5c3': '2f8a12d08f8e811abf9ad5b5a2fd644a',
-    '/267a12d08f8e808ab92ede5defc6defb': '2f8a12d08f8e819db1d6e806835264e7',
-    '/25ba12d08f8e80609070fa24d84d5c97': '2f8a12d08f8e81529dabc12642e86faa',
-    '/25ba12d08f8e80fda552dccb25a49809': '2f8a12d08f8e8102a1f0fa26e9dbee0d',
-    '/25ba12d08f8e80d6ab20e4addd70005d': '2f8a12d08f8e81e6a470d00abb87545c',
-    '/267a12d08f8e803ba247e7e053ca331e': '2f8a12d08f8e8115830df754bedcaa74'
+    '/2a5a12d08f8e805a9f04d2112f476379': '2f8a12d08f8e818b9cdcd02109c5a2db', // jOOQ
+    '/26ba12d08f8e80b693bacbe22a87aac4': '2f8a12d08f8e8030a6a1f14806fbfc6d', // Debezium
+    '/267a12d08f8e80d08a74cacb4c314070': '2f8a12d08f8e81cdbb00c0730dc50340', // QueryDSL 추상화
+    '/268a12d08f8e807db4d0d81fd8c108e7': '2f8a12d08f8e80baabaee1d36b8b6041', // Jenkins 구축기
+    '/25ba12d08f8e806d8d6bf797ca557bbd': '2f8a12d08f8e81a783ebd43c583f325f', // 리플렉션
+    '/258a12d08f8e80d88feac343eef63d46': '2f8a12d08f8e805994b0dddf2b8114f5', // 쿼리 튜닝
+    '/26ca12d08f8e80b6bd5df31f91d29dee': '2f8a12d08f8e81a39bf9eb911c7704f7', // Flyway
+    '/26da12d08f8e8091aa51e8cd858fce03': '2f8a12d08f8e8129b30ce718224262e0', // gRPC
+    '/25ba12d08f8e801ab637e89a0c0eb5c3': '2f8a12d08f8e811abf9ad5b5a2fd644a', // 캐시전략
+    '/267a12d08f8e808ab92ede5defc6defb': '2f8a12d08f8e819db1d6e806835264e7', // 경로변수 암호화
+    '/25ba12d08f8e80609070fa24d84d5c97': '2f8a12d08f8e817094b8d71f1ff78323' // SCG
   },
 
   // whether to use the default notion navigation style or a custom one with links to

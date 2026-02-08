@@ -1,0 +1,14 @@
+diff --git a/build/third-party/collection.js b/build/third-party/collection.js
+index 8e2f12b46c2e0c15c8a6f5b45998e49bab04407a..d64c4bbbea76d2aa43250ef552a3a0d774bb1917 100644
+--- a/build/third-party/collection.js
++++ b/build/third-party/collection.js
+@@ -5422,6 +5422,9 @@ function CollectionCard({
+   ...rest
+ }) {
+   var _a, _b, _c, _d, _e, _f, _g, _h, _i, _j, _k, _l, _m;
++  if (!collection?.schema) {
++    return null;
++  }
+   const ctx2 = useNotionContext();
+   const {
+     components,

@@ -4,6 +4,14 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+patchedDependencies:
+  notion-client@7.7.3:
+    hash: df54e822b893c9148bcda4d52ef21728c970a9e96c426a78f7217bf982083bf7
+    path: patches/notion-client@7.7.3.patch
+  react-notion-x@7.7.3:
+    hash: 1292b09b8d5b21a46be38d5e856e0fe401f8db4bfd67342af98603a4793e69d7
+    path: patches/react-notion-x@7.7.3.patch
+
 importers:
 
   .:
@@ -40,7 +48,7 @@ importers:
         version: 15.5.11(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       notion-client:
         specifier: ^7.7.3
-        version: 7.7.3
+        version: 7.7.3(patch_hash=df54e822b893c9148bcda4d52ef21728c970a9e96c426a78f7217bf982083bf7)
       notion-types:
         specifier: ^7.7.3
         version: 7.7.3
@@ -67,7 +75,7 @@ importers:
         version: 19.1.1(react@19.1.1)
       react-notion-x:
         specifier: ^7.7.3
-        version: 7.7.3(@babel/runtime@7.28.4)(@types/react@19.1.13)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
+        version: 7.7.3(patch_hash=1292b09b8d5b21a46be38d5e856e0fe401f8db4bfd67342af98603a4793e69d7)(@babel/runtime@7.28.4)(@types/react@19.1.13)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       react-tweet:
         specifier: ^3.2.2
         version: 3.2.2(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
@@ -4128,7 +4136,7 @@ snapshots:
 
   normalize-url@8.1.0: {}
 
-  notion-client@7.7.3:
+  notion-client@7.7.3(patch_hash=df54e822b893c9148bcda4d52ef21728c970a9e96c426a78f7217bf982083bf7):
     dependencies:
       notion-types: 7.7.3
       notion-utils: 7.7.3
@@ -4391,7 +4399,7 @@ snapshots:
       react-lifecycles-compat: 3.0.4
       warning: 4.0.3
 
-  react-notion-x@7.7.3(@babel/runtime@7.28.4)(@types/react@19.1.13)(react-dom@19.1.1(react@19.1.1))(react@19.1.1):
+  react-notion-x@7.7.3(patch_hash=1292b09b8d5b21a46be38d5e856e0fe401f8db4bfd67342af98603a4793e69d7)(@babel/runtime@7.28.4)(@types/react@19.1.13)(react-dom@19.1.1(react@19.1.1))(react@19.1.1):
     dependencies:
       '@fisch0920/medium-zoom': 1.0.7
       '@matejmazur/react-katex': 3.1.3(katex@0.16.22)(react@19.1.1)

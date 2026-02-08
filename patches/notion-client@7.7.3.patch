@@ -1,0 +1,42 @@
+diff --git a/build/index.js b/build/index.js
+index 6c970fcf7f789c8a59c265e45b57b2c4e069181b..1f609464d6f502ba4b340243ee4f36a4b9a4fc11 100644
+--- a/build/index.js
++++ b/build/index.js
+@@ -99,21 +99,33 @@ var NotionAPI = class {
+                 ofetchOptions
+               }
+             );
++            const normalizeRecordValues = (records) => {
++              if (!records) return {};
++              const normalized = {};
++              for (const [id, entry] of Object.entries(records)) {
++                if (entry?.value?.value && !entry?.value?.id) {
++                  normalized[id] = entry.value;
++                } else {
++                  normalized[id] = entry;
++                }
++              }
++              return normalized;
++            };
+             recordMap.block = {
+               ...recordMap.block,
+-              ...collectionData.recordMap.block
++              ...normalizeRecordValues(collectionData.recordMap.block)
+             };
+             recordMap.collection = {
+               ...recordMap.collection,
+-              ...collectionData.recordMap.collection
++              ...normalizeRecordValues(collectionData.recordMap.collection)
+             };
+             recordMap.collection_view = {
+               ...recordMap.collection_view,
+-              ...collectionData.recordMap.collection_view
++              ...normalizeRecordValues(collectionData.recordMap.collection_view)
+             };
+             recordMap.notion_user = {
+               ...recordMap.notion_user,
+-              ...collectionData.recordMap.notion_user
++              ...normalizeRecordValues(collectionData.recordMap.notion_user)
+             };
+             recordMap.collection_query[collectionId] = {
+               ...recordMap.collection_query[collectionId],

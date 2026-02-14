@@ -59,7 +59,7 @@ export async function getPage(pageId: string): Promise<ExtendedRecordMap> {
         if (!Array.isArray(modifiers)) continue
         for (const modifier of modifiers) {
           if (Array.isArray(modifier) && modifier[0] === 'eoi' && modifier[1]) {
-            eoiBlockIds.add(modifier[1])
+            eoiBlockIds.add(modifier[1] as string)
           }
         }
       }

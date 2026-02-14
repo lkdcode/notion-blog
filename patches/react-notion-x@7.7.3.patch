@@ -1,3 +1,61 @@
+diff --git a/build/index.js b/build/index.js
+index 5871059ef41022c933b5303b76641fd5499bc9a5..346f61c32f170b7f5b0e9d45aa96d95a528f1529 100644
+--- a/build/index.js
++++ b/build/index.js
+@@ -1092,13 +1092,14 @@ function EOI({
+   var _a, _b, _c;
+   const { components } = useNotionContext();
+   const { original_url, attributes, domain } = (block == null ? void 0 : block.format) || {};
+-  if (!original_url || !attributes) {
++  if (!original_url) {
+     return null;
+   }
+-  const title = (_a = attributes.find((attr) => attr.id === "title")) == null ? void 0 : _a.values[0];
+-  let owner = (_b = attributes.find((attr) => attr.id === "owner")) == null ? void 0 : _b.values[0];
+-  const lastUpdatedAt = (_c = attributes.find((attr) => attr.id === "updated_at")) == null ? void 0 : _c.values[0];
++  const title = attributes ? ((_a = attributes.find((attr) => attr.id === "title")) == null ? void 0 : _a.values[0]) : null;
++  let owner = attributes ? ((_b = attributes.find((attr) => attr.id === "owner")) == null ? void 0 : _b.values[0]) : null;
++  const lastUpdatedAt = attributes ? ((_c = attributes.find((attr) => attr.id === "updated_at")) == null ? void 0 : _c.values[0]) : null;
+   const lastUpdated = lastUpdatedAt ? formatNotionDateTime(lastUpdatedAt) : null;
++  const fallbackTitle = title || (() => { try { const u = new URL(original_url); return u.pathname === '/' ? u.hostname : u.pathname.split('/').filter(Boolean).pop(); } catch { return original_url; } })();
+   let externalImage;
+   switch (domain) {
+     case "github.com":
+@@ -1109,13 +1110,7 @@ function EOI({
+       }
+       break;
+     default:
+-      if (true) {
+-        console.log(
+-          `Unsupported external_object_instance domain "${domain}"`,
+-          JSON.stringify(block, null, 2)
+-        );
+-      }
+-      return null;
++      break;
+   }
+   return /* @__PURE__ */ jsxs5(
+     components.Link,
+@@ -1131,16 +1126,16 @@ function EOI({
+       children: [
+         externalImage && /* @__PURE__ */ jsx7("div", { className: "notion-external-image", children: externalImage }),
+         /* @__PURE__ */ jsxs5("div", { className: "notion-external-description", children: [
+-          /* @__PURE__ */ jsx7("div", { className: "notion-external-title", children: title }),
++          /* @__PURE__ */ jsx7("div", { className: "notion-external-title", children: fallbackTitle }),
+           !inline && owner ? /* @__PURE__ */ jsxs5("div", { className: "notion-external-block-desc", children: [
+             owner,
+             lastUpdated && /* @__PURE__ */ jsx7("span", { children: " \u2022 " }),
+             lastUpdated && `Updated ${lastUpdated}`
+           ] }) : null,
+-          inline && (owner || lastUpdated) && /* @__PURE__ */ jsx7(
++          inline && (owner || lastUpdated) && /* @__PURE__  */ jsx7(
+             MentionPreviewCard,
+             {
+-              title,
++              title: fallbackTitle,
+               owner,
+               lastUpdated,
+               domain,
 diff --git a/build/third-party/collection.js b/build/third-party/collection.js
 index 8e2f12b46c2e0c15c8a6f5b45998e49bab04407a..d64c4bbbea76d2aa43250ef552a3a0d774bb1917 100644
 --- a/build/third-party/collection.js
